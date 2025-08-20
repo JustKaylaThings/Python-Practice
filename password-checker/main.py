@@ -25,19 +25,31 @@ def user_input():
     return user_password
 
 
-def check_length(length):
+def check_length(password):
 
-    if len(length) <= 7:
-        input("Too short. Enter a better password: ")
-    else:
-        print("Great password!")
+    while len(password) <= 7:
+        password = input("Too short. Enter a longer password: ")
+        
+    print("Success!")
+    print(f"Length of password: {len(password)}")
+    return password
 
 
 
 #Variables
 user_password = user_input()
-password_length = len(user_password)
 
 #Call the result
-check_length(user_password)
-print(f"Length of password: {password_length}")
+good_password  = check_length(user_password)
+
+#Print to file
+
+with open("password.txt", "w") as file:
+    file.write(f"Here's your password:\n{good_password}")
+
+#Learned today: 
+# while loop is for if you don't know when the end goal
+# for loop is defnte end
+
+#Still building on:
+#writing to a file
