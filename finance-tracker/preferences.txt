@@ -1,0 +1,2 @@
+Favorite color: red
+Favorite animal: greenie
